@@ -1,1 +1,37 @@
-/* feuille css de la page de gwak */
+/* Classes de police */
+.patrick-hand-regular {
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;}
+
+/* <weight>: Use a value from 100 to 900 */
+    .montserrat {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 100;
+      font-style: normal;}
+
+
+  
+p, h1, h2, ul {color: #cac49f;}
+
+h1, h2, ul {font-family: "Patrick Hand", cursive;
+    font-size: 1.5em;}
+
+p {font-family: "Montserrat", sans-serif;
+    text-align: justify;
+    font-size: 1em;}
+
+body {background-color:#090a05;}
+
+.background_pic {width: 66%; height: auto;}
+.center_pic {text-align: center;}
+    
+/* Media query pour les écrans PC */
+@media screen and (min-width: 768px) {
+    p, h1, h2, ul {
+        margin-left: auto; /* Centre le texte en poussant la marge gauche à l'extrême gauche */
+        margin-right: auto; /* Centre le texte en poussant la marge droite à l'extrême droite */
+        max-width: 800px; /* Limite la largeur maximale du texte pour qu'il reste lisible */
+  }
+}
