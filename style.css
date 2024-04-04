@@ -25,7 +25,14 @@ p {font-family: "Montserrat", sans-serif;
 header div {
     font-family: "Montserrat", sans-serif;
     padding: 2%;
-    background-image: linear-gradient(to bottom, rgba(9, 10, 5, 0.9) 0%, rgba(9, 10, 5, 0.7) 50%, rgba(9, 10, 5, 0) 100%);
+    background-image: radial-gradient(circle, rgba(9, 10, 5, 1) 0%, rgba(9, 10, 5, 0.8) 50%, rgba(9, 10, 5, 0) 85%);
+    border-radius: 45%;
+}
+
+header div:hover {
+    color:rgb(255, 255, 255);
+    padding: 1.9%;
+    background-image: radial-gradient(circle, rgb(35, 35, 20, 1) 0%, rgba(35, 35, 20, 0.4) 40%, rgba(35, 35, 20, 0) 60%);
     border-radius: 45%;
 }
 
@@ -38,14 +45,23 @@ header div {
 body {background-color:#090a05;}
 
 @media screen and (min-width: 768px) {
-    body {
-    background-image: url("edition IMAGES/gwak_main.jpg");
-    background-size: 55%;
-    background-repeat: no-repeat;
-    background-position: center top;
+    .bodymain {
+        background-image: url("edition IMAGES/gwak_main.jpg");
+        background-size: 55%;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+    }
+
+    .bodydark {
+        background-image: url("edition IMAGES/gwak_maindark.jpg");
+        background-size: 55%;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
     }
 }
-    
+
 /* Media query pour les écrans PC */
 @media screen and (min-width: 768px) {
     p, h1, h2, ul {
