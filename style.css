@@ -22,18 +22,38 @@ p, label {font-family: "Montserrat", sans-serif;
     text-align: justify;
     font-size: 1em;}
 
-header div {
-    font-family: "Montserrat", sans-serif;
-    padding: 2%;
-    background-image: radial-gradient(circle, rgba(9, 10, 5, 1) 0%, rgba(9, 10, 5, 0.8) 50%, rgba(9, 10, 5, 0) 85%);
-    border-radius: 45%;
-}
+    header {position: relative;}
 
-header div:hover {
-    color:rgb(255, 255, 255);
-    padding: 1.9%;
-    background-image: radial-gradient(circle, rgb(35, 35, 20, 1) 0%, rgba(35, 35, 20, 0.4) 40%, rgba(35, 35, 20, 0) 60%);
-    border-radius: 45%;
+    header div {
+        font-family: "Montserrat", sans-serif;
+        padding: 2%;
+        background-image: radial-gradient(circle, rgba(9, 10, 5, 1) 0%, rgba(9, 10, 5, 0.8) 50%, rgba(9, 10, 5, 0) 85%);
+        border-radius: 45%;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Ajout d'un pseudo-élément */
+    header div::after {
+        content: ""; /* Ajoutez un contenu vide pour le pseudo-élément */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgb(35, 35, 20, 1) 0%, rgba(35, 35, 20, 0.4) 40%, rgba(35, 35, 20, 0) 60%);
+        border-radius: inherit; /* Héritez du même rayon de bordure que l'élément parent */
+        opacity: 0; /* Cachez le pseudo-élément par défaut */
+        transition: opacity 0.7s ease;
+        z-index: -1 /* Ajoutez une transition sur l'opacité */
+    }
+    
+    header div:hover::after {
+        opacity: 1; /* Affichez progressivement le pseudo-élément au survol */
+    }
+
+.logos {
+    size: 50px;
 }
 
 .header {
@@ -70,3 +90,52 @@ body {background-color:#090a05;}
         max-width: 800px;
   }
 }
+
+/* Grid pour la page de contact */
+
+form  {
+    display: grid;
+    grid-template-columns: 150px 600px;
+}
+
+.label_droite {
+    text-align: right;
+}
+
+.center_align {
+    justify-content: center;
+}
+
+/* Media Query pour smartphone */
+@media screen and (max-width: 900px) {
+    .bodymain {
+        background-image: url("edition IMAGES/gwak_main_smph.jpg");
+        background-size: 55%;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+    }
+
+    .bodydark {
+        background-image: url("edition IMAGES/gwak_maindark_smph.jpg");
+        background-size: 55%;
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+    }
+}
+    
+    /*position du petit texte de présentation */
+    .haiku {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    footer {
+        bottom: 0;
+        position: fixed;
+    }
+
+    * {
+        transition: all 0.7s ease;
+    }
